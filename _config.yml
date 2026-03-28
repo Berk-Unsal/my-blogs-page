@@ -1,0 +1,22 @@
+title: "Blogs"
+description: ""
+lang: en
+url: ""
+baseurl: ""
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+timezone: UTC
+
+# GitHub Pages-safe plugin
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md

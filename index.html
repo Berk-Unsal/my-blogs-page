@@ -1,0 +1,40 @@
+---
+layout: default
+title: Home
+---
+
+<section aria-label="Posts">
+  {% if site.posts.size > 0 %}
+    <div class="post-list">
+      {% for post in site.posts %}
+        <article class="post-card">
+          {% assign word_count = post.content | strip_html | number_of_words %}
+          {% assign read_time = word_count | plus: 179 | divided_by: 180 %}
+          {% if read_time < 1 %}
+            {% assign read_time = 1 %}
+          {% endif %}
+
+          <a class="post-card-media" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title | escape }}">
+            {% if post.thumbnail_image %}
+              <img src="{{ post.thumbnail_image | relative_url }}" alt="{{ post.title | escape }}">
+            {% else %}
+              <div class="post-card-fallback" aria-hidden="true">No image</div>
+            {% endif %}
+          </a>
+
+          <div class="post-card-copy">
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p class="post-meta">
+              <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+              <span aria-hidden="true"> · </span>
+              <span class="post-read-time">{{ read_time }} minutes</span>
+            </p>
+            <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No posts yet.</p>
+  {% endif %}
+</section>

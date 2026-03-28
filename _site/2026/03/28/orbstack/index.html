@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+        What to use on macOS for containers? w/OrbStack | My Book Blog
+      
+    </title>
+    <meta name="description" content="Did you switch to macOS recently? Or you want to manage your containers in your mac computer? You are in the right blog.">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="alternate" type="application/atom+xml" title="My Book Blog" href="/feed.xml">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="site-title" href="/">My Book Blog</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color mode" aria-pressed="false">
+          Dark
+        </button>
+      </header>
+
+      <main class="site-content" aria-label="Content">
+        <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">What to use on macOS for containers? w/OrbStack</h1>
+    <p class="post-date">March 28, 2026</p>
+  </header>
+
+  
+    <figure class="post-hero">
+      <img src="/assets/images/orbstack_thumbnail.png" alt="What to use on macOS for containers? w/OrbStack">
+    </figure>
+  
+
+  <div class="post-content">
+    <h1 id="running-docker--kubernetes-on-macos-why-orbstack-changes-everything">Running Docker &amp; Kubernetes on macOS: Why OrbStack Changes Everything</h1>
+
+<p>Do you want to run Docker and Kubernetes on macOS but aren’t sure which tech stack to choose? Then you’re in the right place. I’m not going to walk you through a step-by-step setup; instead, I’ll focus on the benefits of picking the right tool and the overall developer experience.</p>
+
+<p>I’ve developed on Linux, Windows, and currently use macOS as my main daily driver. The caveat with Docker is that it’s inherently Linux-native, which means it can be incredibly heavy on other operating systems. On top of that, it gets pretty messy trying to maintain all your containers, volumes, images, and the overall structure of your Kubernetes clusters. If you’ve used it for a while, you already know how fast dangling containers and failed images can eat up your storage space in no time.</p>
+
+<blockquote>
+  <p><strong>Licensing Note:</strong> If you’re working on open-source or personal projects, OrbStack is completely free. However, if you plan to use it for commercial business projects, you’ll need a paid subscription. Check out their <a href="https://orbstack.dev/pricing">pricing page</a> for details.</p>
+</blockquote>
+
+<hr />
+
+<p><img src="/assets/images/orbstack.png" alt="OrbStack" /></p>
+
+<hr />
+
+<h2 id="the-problem-with-local-containers">The Problem with Local Containers</h2>
+
+<p>Running containers locally can get incredibly resource-intensive. Spinning up a single, lightweight container might give you the illusion of an optimized engine, but the moment you start building complex microservices, the cracks start to show.</p>
+
+<p>This is where <strong>OrbStack</strong> comes in. If you are using an Apple Silicon (M-series) Mac, OrbStack is supported natively and runs like a dream. It handles your Docker containers, runs a lightweight Kubernetes cluster, and even lets you spin up full Linux virtual machines if you need them.</p>
+
+<p>The moment I discovered OrbStack, managing my cloud-native projects became significantly easier. Even though I have 24GB of RAM on my machine, it is always better to use highly optimized tools that don’t hog your system resources. And if you are working with less RAM than that, switching to a lightweight engine like this is basically a necessity.</p>
+
+<hr />
+
+<h2 id="blazing-boot-times">Blazing Boot Times</h2>
+
+<p>Let’s talk about boot time first. If you’ve ever waited for traditional Docker Desktop to start up, you know it’s the perfect excuse to go grab a coffee. OrbStack, on the other hand, <strong>boots in about two seconds</strong> — practically instantaneous.</p>
+
+<p>When you are spinning up an entire architecture of microservices — like a custom application or a complex DevOps platform with its own databases and API gateways — you don’t want your laptop spinning its fans like a jet engine. Because OrbStack is natively optimized for Apple Silicon:</p>
+
+<ul>
+  <li><strong>CPU usage stays close to zero</strong> when idle</li>
+  <li>Your Mac won’t break a sweat</li>
+  <li>You won’t be burning through your battery life just to keep background containers alive</li>
+</ul>
+
+<hr />
+
+<h2 id="kubernetes--networking--out-of-the-box">Kubernetes &amp; Networking — Out of the Box</h2>
+
+<p>Then there is the Kubernetes and networking side of things. If you are grinding through heavy hands-on labs, maybe studying for admin certifications, or trying to simulate complex environments locally, you need a cluster that actually cooperates.</p>
+
+<p>OrbStack gives you a <strong>lightweight Kubernetes cluster right out of the box</strong>, but the real game-changer is how it handles the network.</p>
+
+<p>It automatically assigns local domain names to your containers. This means you can just hit something like <code class="language-plaintext highlighter-rouge">app.orb.local</code> in your browser without ever having to touch your <code class="language-plaintext highlighter-rouge">/etc/hosts</code> file.</p>
+
+<p>Imagine trying to containerize and prototype a heavy, multi-layered system — like a 5G core network — directly on your Mac. With legacy tools, configuring the IP routing and port forwarding between all those different components is an absolute nightmare. With OrbStack, <strong>bidirectional networking just works out of the box</strong>, letting your host machine and your containers communicate effortlessly.</p>
+
+<hr />
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>If you’re building anything cloud-native on an M-series Mac, you really owe it to yourself to give OrbStack a try. The whole point of a local environment is to make your life easier.</p>
+
+<p>Instead of fighting with bloated software and constantly managing your system resources, you get an engine that just quietly does its job in the background. It takes the headache out of local development and <strong>makes building microservices fun again</strong>.</p>
+
+<p>Give it a spin, watch how much smoother your containers run, and let me know how it changes your workflow.</p>
+
+<p><strong>Happy building!</strong></p>
+
+<p>You can reach me out on:</p>
+
+<h2 id="connect-with-me">Connect with me</h2>
+
+<p><a href="https://instagram.com/unsaalberk"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&amp;logoColor=white" alt="Instagram" /></a>
+<a href="https://github.com/Berk-Unsal"><img src="https://img.shields.io/badge/GitHub-100000?logo=github&amp;logoColor=white" alt="GitHub" /></a>
+<a href="https://linkedin.com/in/berkunsaltr"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&amp;logoColor=white" alt="LinkedIn" /></a></p>
+
+  </div>
+</article>
+
+      </main>
+
+      <footer class="site-footer">
+        
+          <p>A minimalist, book-style blog powered by Jekyll.</p>
+        
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var storageKey = 'color-theme';
+        var root = document.documentElement;
+        var button = document.getElementById('theme-toggle');
+
+        function applyTheme(theme) {
+          root.setAttribute('data-theme', theme);
+          if (button) {
+            button.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            button.textContent = theme === 'dark' ? 'Light' : 'Dark';
+          }
+          localStorage.setItem(storageKey, theme);
+        }
+
+        var saved = localStorage.getItem(storageKey);
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var initial = saved || (prefersDark ? 'dark' : 'light');
+        applyTheme(initial);
+
+        if (button) {
+          button.addEventListener('click', function () {
+            var current = root.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

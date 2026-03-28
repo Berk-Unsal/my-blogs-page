@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Welcome post thumbnail</title>
+  <desc id="desc">Sepia paper texture style placeholder image for the welcome post.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2e7d3" />
+      <stop offset="100%" stop-color="#dbc9aa" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)" />
+  <rect x="56" y="56" width="1088" height="518" fill="none" stroke="#7f6745" stroke-width="2" opacity="0.8" />
+  <text x="90" y="250" fill="#3e2f1d" font-size="64" font-family="Georgia, serif">Welcome</text>
+  <text x="90" y="330" fill="#4f3f2a" font-size="36" font-family="Georgia, serif">A minimalist Jekyll book-style blog</text>
+</svg>

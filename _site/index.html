@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+        Home | My Book Blog
+      
+    </title>
+    <meta name="description" content="A minimalist, book-style blog powered by Jekyll.">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="alternate" type="application/atom+xml" title="My Book Blog" href="/feed.xml">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="site-title" href="/">Blogs</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color mode" aria-pressed="false">
+          Dark
+        </button>
+      </header>
+
+      <main class="site-content" aria-label="Content">
+        <section aria-label="Posts">
+  
+    <div class="post-list">
+      
+        <article class="post-card">
+          
+          
+          
+
+          <a class="post-card-media" href="/2026/03/28/orbstack/" aria-label="Read What to use on macOS for containers? w/OrbStack">
+            
+              <img src="/assets/images/orbstack_thumbnail.png" alt="What to use on macOS for containers? w/OrbStack">
+            
+          </a>
+
+          <div class="post-card-copy">
+            <h2><a href="/2026/03/28/orbstack/">What to use on macOS for containers? w/OrbStack</a></h2>
+            <p class="post-meta">
+              <span class="post-date">March 28, 2026</span>
+              <span aria-hidden="true"> · </span>
+              <span class="post-read-time">4 minutes</span>
+            </p>
+            <p class="post-excerpt">Did you switch to macOS recently? Or you want to manage your containers in your mac computer? You are in the right blog.</p>
+          </div>
+        </article>
+      
+    </div>
+  
+</section>
+
+      </main>
+
+      <footer class="site-footer">
+        
+          <p>A minimalist, book-style blog powered by Jekyll.</p>
+        
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var storageKey = 'color-theme';
+        var root = document.documentElement;
+        var button = document.getElementById('theme-toggle');
+
+        function applyTheme(theme) {
+          root.setAttribute('data-theme', theme);
+          if (button) {
+            button.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            button.textContent = theme === 'dark' ? 'Light' : 'Dark';
+          }
+          localStorage.setItem(storageKey, theme);
+        }
+
+        var saved = localStorage.getItem(storageKey);
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var initial = saved || (prefersDark ? 'dark' : 'light');
+        applyTheme(initial);
+
+        if (button) {
+          button.addEventListener('click', function () {
+            var current = root.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

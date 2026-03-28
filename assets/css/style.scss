@@ -1,0 +1,247 @@
+---
+---
+
+:root {
+  --paper: #f4ede0;
+  --paper-edge: #ece3d3;
+  --ink: #2b231b;
+  --muted-ink: #5a4f42;
+  --rule: #d8ccbb;
+  --link: #3e3122;
+  --link-hover: #17120d;
+  --card-bg: #f7f1e6;
+  --focus: #8f6f43;
+}
+
+:root[data-theme='dark'] {
+  --paper: #171513;
+  --paper-edge: #1d1a17;
+  --ink: #e7ddce;
+  --muted-ink: #b8ac9a;
+  --rule: #3b352f;
+  --link: #f0ddbf;
+  --link-hover: #fff3df;
+  --card-bg: #1f1b18;
+  --focus: #d3b98f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    radial-gradient(circle at 25% 10%, rgba(255, 255, 255, 0.45), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.2), transparent 28%),
+    var(--paper);
+  color: var(--ink);
+  font-family: "American Typewriter", "American Typewriter Regular", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.8;
+  text-rendering: optimizeLegibility;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.site-shell {
+  max-width: 860px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 2.5rem 1.25rem 3rem;
+  background: linear-gradient(to bottom, transparent, var(--paper-edge) 120%);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.theme-toggle {
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  font: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.site-content {
+  margin-bottom: 2rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  color: var(--muted-ink);
+  font-size: 0.95rem;
+}
+
+.post-list {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.post-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--card-bg);
+}
+
+.post-card-media,
+.post-card-media img,
+.post-card-fallback {
+  display: block;
+  width: 100%;
+  height: 96px;
+  border-radius: 4px;
+}
+
+.post-card-media {
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+
+.post-card-media img {
+  object-fit: cover;
+}
+
+.post-card-fallback {
+  display: grid;
+  place-items: center;
+  color: var(--muted-ink);
+  font-size: 0.85rem;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(0, 0, 0, 0.05) 8px,
+    rgba(0, 0, 0, 0.05) 16px
+  );
+}
+
+.post-card-copy h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.post-date {
+  margin: 0 0 0.45rem;
+  color: var(--muted-ink);
+  font-size: 0.95rem;
+}
+
+.post-meta {
+  margin: 0 0 0.45rem;
+  color: var(--muted-ink);
+  font-size: 0.95rem;
+}
+
+.post-meta .post-date {
+  margin: 0;
+}
+
+.post-excerpt {
+  margin: 0;
+}
+
+.post {
+  max-width: 72ch;
+}
+
+.post-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.post-title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  line-height: 1.25;
+}
+
+.post-hero {
+  margin: 0 0 1.25rem;
+}
+
+.post-hero img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+}
+
+.post-content > *:first-child {
+  margin-top: 0;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 680px) {
+  body {
+    font-size: 17px;
+    line-height: 1.72;
+  }
+
+  .site-shell {
+    padding: 1.4rem 0.95rem 2rem;
+  }
+
+  .post-card {
+    grid-template-columns: 1fr;
+  }
+
+  .post-card-media,
+  .post-card-media img,
+  .post-card-fallback {
+    height: 170px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
