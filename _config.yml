@@ -1,8 +1,8 @@
 title: "Blogs"
 description: ""
 lang: en
-url: ""
-baseurl: ""
+url: "https://berk-unsal.github.io"
+baseurl: "/my-blogs-page"
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
 timezone: UTC
