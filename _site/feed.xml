@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://berk-unsal.github.io/my-blogs-page/feed.xml" rel="self" type="application/atom+xml" /><link href="https://berk-unsal.github.io/my-blogs-page/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-03-28T16:45:07+00:00</updated><id>https://berk-unsal.github.io/my-blogs-page/feed.xml</id><title type="html">Blogs</title><subtitle></subtitle><entry><title type="html">What to use on macOS for containers? w/OrbStack</title><link href="https://berk-unsal.github.io/my-blogs-page/2026/03/28/orbstack/" rel="alternate" type="text/html" title="What to use on macOS for containers? w/OrbStack" /><published>2026-03-28T10:00:00+00:00</published><updated>2026-03-28T10:00:00+00:00</updated><id>https://berk-unsal.github.io/my-blogs-page/2026/03/28/orbstack</id><content type="html" xml:base="https://berk-unsal.github.io/my-blogs-page/2026/03/28/orbstack/"><![CDATA[<h1 id="running-docker--kubernetes-on-macos-why-orbstack-changes-everything">Running Docker &amp; Kubernetes on macOS: Why OrbStack Changes Everything</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://berk-unsal.github.io/my-blogs-page/feed.xml" rel="self" type="application/atom+xml" /><link href="https://berk-unsal.github.io/my-blogs-page/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-03-28T16:47:44+00:00</updated><id>https://berk-unsal.github.io/my-blogs-page/feed.xml</id><title type="html">Blogs</title><subtitle></subtitle><entry><title type="html">What to use on macOS for containers? w/OrbStack</title><link href="https://berk-unsal.github.io/my-blogs-page/2026/03/28/orbstack/" rel="alternate" type="text/html" title="What to use on macOS for containers? w/OrbStack" /><published>2026-03-28T10:00:00+00:00</published><updated>2026-03-28T10:00:00+00:00</updated><id>https://berk-unsal.github.io/my-blogs-page/2026/03/28/orbstack</id><content type="html" xml:base="https://berk-unsal.github.io/my-blogs-page/2026/03/28/orbstack/"><![CDATA[<h1 id="running-docker--kubernetes-on-macos-why-orbstack-changes-everything">Running Docker &amp; Kubernetes on macOS: Why OrbStack Changes Everything</h1>
 
 <p>Do you want to run Docker and Kubernetes on macOS but aren’t sure which tech stack to choose? Then you’re in the right place. I’m not going to walk you through a step-by-step setup; instead, I’ll focus on the benefits of picking the right tool and the overall developer experience.</p>
 
@@ -10,7 +10,7 @@
 
 <hr />
 
-<p><img src="/assets/images/orbstack.png" alt="OrbStack" /></p>
+<p><img src="/my-blogs-page/assets/images/orbstack.png" alt="OrbStack" /></p>
 
 <hr />
 
