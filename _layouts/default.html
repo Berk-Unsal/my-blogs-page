@@ -12,6 +12,7 @@
     </title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 | escape }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/images/developer.png' | relative_url }}">
     <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
   </head>
   <body>
@@ -31,6 +32,14 @@
         {% if site.description and site.description != "" %}
           <p>{{ site.description }}</p>
         {% endif %}
+        {% capture footer_social_markdown %}
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/unsaalberk)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/Berk-Unsal)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/berkunsaltr)
+        {% endcapture %}
+        <div class="footer-reference" aria-label="Social references">
+          {{ footer_social_markdown | strip | markdownify }}
+        </div>
       </footer>
     </div>
 

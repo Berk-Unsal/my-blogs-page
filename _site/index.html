@@ -10,6 +10,7 @@
     </title>
     <meta name="description" content="">
     <link rel="stylesheet" href="/my-blogs-page/assets/css/style.css">
+    <link rel="icon" type="image/png" href="/my-blogs-page/assets/images/developer.png">
     <link rel="alternate" type="application/atom+xml" title="Blogs" href="/my-blogs-page/feed.xml">
   </head>
   <body>
@@ -27,10 +28,71 @@
     
     
     
+    
 
-    <div class="post-list">
+    <div class="post-layout" data-post-layout>
       
-        <article class="post-card">
+        <aside class="post-filter-panel" data-filter-panel>
+          <button
+            class="post-filter-toggle"
+            type="button"
+            data-filter-toggle
+            aria-controls="post-filter-form"
+            aria-expanded="true"
+          >
+            Labels
+          </button>
+          <form id="post-filter-form" class="post-filter" data-post-filter aria-label="Filter posts by labels" onsubmit="return false;">
+            <fieldset class="post-filter-fieldset">
+              <legend>Filter by labels</legend>
+              <div class="post-filter-options">
+                
+                  
+                  <label class="post-filter-option">
+                    <input type="checkbox" value="containers">
+                    <span>containers</span>
+                  </label>
+                
+                  
+                  <label class="post-filter-option">
+                    <input type="checkbox" value="devops">
+                    <span>devops</span>
+                  </label>
+                
+                  
+                  <label class="post-filter-option">
+                    <input type="checkbox" value="personal">
+                    <span>personal</span>
+                  </label>
+                
+                  
+                  <label class="post-filter-option">
+                    <input type="checkbox" value="social">
+                    <span>social</span>
+                  </label>
+                
+                  
+                  <label class="post-filter-option">
+                    <input type="checkbox" value="tech">
+                    <span>tech</span>
+                  </label>
+                
+                  
+                  <label class="post-filter-option">
+                    <input type="checkbox" value="travel">
+                    <span>travel</span>
+                  </label>
+                
+              </div>
+            </fieldset>
+            <p class="post-filter-status" data-filter-status aria-live="polite"></p>
+          </form>
+        </aside>
+      
+
+      <div class="post-list">
+      
+        <article class="post-card" data-labels="social|personal">
           
           
           
@@ -65,7 +127,39 @@
           </div>
         </article>
       
-        <article class="post-card">
+        <article class="post-card" data-labels="social|travel">
+          
+          
+          
+
+          <a class="post-card-media" href="/my-blogs-page/2026/03/29/visiting-finland/" aria-label="Read Visiting Finland as a Student">
+            
+              <img src="/my-blogs-page/assets/images/helsinki-thumbnail.jpeg" alt="Visiting Finland as a Student">
+            
+          </a>
+
+          <div class="post-card-copy">
+            <h2><a href="/my-blogs-page/2026/03/29/visiting-finland/">Visiting Finland as a Student</a></h2>
+            <p class="post-meta">
+              <span class="post-date">March 29, 2026</span>
+              <span aria-hidden="true"> · </span>
+              <span class="post-read-time">3 minutes</span>
+              
+            </p>
+            <p class="post-excerpt">Do you want to visit Finland but you are unsure about the transportations and places to visit? Learn from my experience!</p>
+            
+              <ul class="post-label-list" aria-label="Post labels">
+                
+                  <li class="post-label">social</li>
+                
+                  <li class="post-label">travel</li>
+                
+              </ul>
+            
+          </div>
+        </article>
+      
+        <article class="post-card" data-labels="tech|devops|containers">
           
           
           
@@ -99,14 +193,113 @@
           </div>
         </article>
       
+      </div>
     </div>
   
 </section>
+
+<script>
+  (function () {
+    var filterRoot = document.querySelector('[data-post-filter]');
+    if (!filterRoot) {
+      return;
+    }
+
+    var checkboxes = Array.prototype.slice.call(
+      filterRoot.querySelectorAll('input[type="checkbox"]')
+    );
+    var cards = Array.prototype.slice.call(
+      document.querySelectorAll('.post-card[data-labels]')
+    );
+    var status = filterRoot.querySelector('[data-filter-status]');
+    var postLayout = document.querySelector('[data-post-layout]');
+    var filterPanel = document.querySelector('[data-filter-panel]');
+    var filterToggle = document.querySelector('[data-filter-toggle]');
+
+    if (postLayout && filterPanel && filterToggle) {
+      filterToggle.addEventListener('click', function () {
+        postLayout.classList.toggle('is-filter-collapsed');
+        var expanded = !postLayout.classList.contains('is-filter-collapsed');
+        filterToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+    }
+
+    function normalizeLabel(input) {
+      return String(input || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+    }
+
+    function getCardLabels(card) {
+      var raw = card.getAttribute('data-labels') || '';
+      if (!raw) {
+        return [];
+      }
+
+      return raw.split('|').map(function (item) {
+        return normalizeLabel(item);
+      }).filter(Boolean);
+    }
+
+    function getSelectedLabels() {
+      return checkboxes.filter(function (box) {
+        return box.checked;
+      }).map(function (box) {
+        return normalizeLabel(box.value);
+      });
+    }
+
+    cards.forEach(function (card) {
+      card._labels = getCardLabels(card);
+    });
+
+    function applyFilters() {
+      var selected = getSelectedLabels();
+      var selectedSet = new Set(selected);
+      var visibleCount = 0;
+
+      cards.forEach(function (card) {
+        var isVisible = selected.length === 0 || card._labels.some(function (label) {
+          return selectedSet.has(label);
+        });
+
+        card.hidden = !isVisible;
+        if (isVisible) {
+          visibleCount += 1;
+        }
+      });
+
+      if (status) {
+        if (selected.length === 0) {
+          status.textContent = 'Showing all posts';
+        } else {
+          status.textContent = 'Showing ' + visibleCount + ' post' + (visibleCount === 1 ? '' : 's') + ' matching selected labels';
+        }
+      }
+    }
+
+    checkboxes.forEach(function (box) {
+      box.addEventListener('change', applyFilters);
+    });
+
+    applyFilters();
+  })();
+</script>
 
       </main>
 
       <footer class="site-footer">
         
+        
+        <div class="footer-reference" aria-label="Social references">
+          <p><a href="https://instagram.com/unsaalberk"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&amp;logoColor=white" alt="Instagram" /></a>
+<a href="https://github.com/Berk-Unsal"><img src="https://img.shields.io/badge/GitHub-100000?logo=github&amp;logoColor=white" alt="GitHub" /></a>
+<a href="https://linkedin.com/in/berkunsaltr"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&amp;logoColor=white" alt="LinkedIn" /></a></p>
+
+        </div>
       </footer>
     </div>
 

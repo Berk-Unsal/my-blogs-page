@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+        Visiting Finland as a Student | Blogs
+      
+    </title>
+    <meta name="description" content="Do you want to visit Finland but you are unsure about the transportations and places to visit? Learn from my experience!">
+    <link rel="stylesheet" href="/my-blogs-page/assets/css/style.css">
+    <link rel="icon" type="image/png" href="/my-blogs-page/assets/images/developer.png">
+    <link rel="alternate" type="application/atom+xml" title="Blogs" href="/my-blogs-page/feed.xml">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="site-title" href="/my-blogs-page/">Blogs</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color mode" aria-pressed="false">
+          Dark
+        </button>
+      </header>
+
+      <main class="site-content" aria-label="Content">
+        <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Visiting Finland as a Student</h1>
+    <p class="post-meta">
+      <span class="post-date">March 29, 2026</span>
+      
+    </p>
+    
+      <ul class="post-label-list" aria-label="Post labels">
+        
+          <li class="post-label">social</li>
+        
+          <li class="post-label">travel</li>
+        
+      </ul>
+    
+  </header>
+
+  
+    <figure class="post-hero">
+      <img src="/my-blogs-page/assets/images/helsinki-thumbnail.jpeg" alt="Visiting Finland as a Student">
+    </figure>
+  
+
+  <div class="post-content">
+    <p>Visiting Finland as a Student: My Experience</p>
+
+<p>If you are a student, you know exactly how challenging it can be to plan a trip on a budget. In this blog, I’m going to share my experience traveling to Finland and help you decide if it should be your next destination.</p>
+
+<p>Finland is an amazing country with incredible sights, though most people tend to worry about two things: the weather and the transportation.</p>
+
+<p>Getting There: The Scenic Route</p>
+
+<p>My journey began by exploring Estonia first. While the two countries aren’t land neighbors, they are very close. Instead of flying, I took the ferry across the Gulf of Finland.</p>
+
+<p>If you usually travel by bus or plane, you know how exhausting those trips can be. Going by ferry is one of those rare travel experiences that doesn’t feel tiring because the journey itself is part of the adventure—especially if you haven’t spent much time at sea. For me, it was a fantastic experience!</p>
+
+<p>Navigating Finland</p>
+
+<p>When you arrive at the port (the specific one depends on your ferry company), you’ll need to head into the city. If you arrive late like I did, having your transportation sorted is a lifesaver.</p>
+
+<p>The App: The official transportation app is HSL, available on both the App Store and Google Play.</p>
+
+<p>The Ticket: I highly recommend buying “Day Tickets” if you are staying for more than 24 hours. It’s much more cost-effective than buying single tickets, and it gives you the freedom to reach all the major tourist spots.</p>
+
+<p>The Zones: When buying a ticket, the app will ask you to select zones (ranging from A to D). You can extend your area of eligibility based on where you plan to go, and the app makes it very clear which zones you’ll need.</p>
+
+<p><img src="/my-blogs-page/assets/images/helsinki-ferry.jpeg" alt="OrbStack" /></p>
+
+<p>Top Places to Visit</p>
+
+<p>I categorize Finnish travel into three types: Island visits, Arctic visits, and City visits.</p>
+
+<p>While I didn’t make it to the Arctic this time—which I’m still a little sad about—if you have the chance, you should absolutely visit Lapland!</p>
+
+<p>Helsinki and the Islands</p>
+
+<p>A visit to Helsinki is non-negotiable. If you have your daily HSL ticket, I suggest using the tramway to get around. Save your energy for the islands, because you’ll be doing a lot of walking there (and it’s worth every step!).</p>
+
+<p>Helsinki is a remarkable city with deep history. Here is a pro-tip: that HSL ticket you bought? It actually includes the ferry from Helsinki to the nearby islands! It was a pleasant shock to realize our standard transit pass covered a cruise. The boats are in great shape and the views as you pass through the archipelago are insane.</p>
+
+<p>Note: Even though the islands are historic sites, people do live there, so be mindful of the local neighborhoods!</p>
+
+<p>Happy traveling!</p>
+
+  </div>
+</article>
+
+      </main>
+
+      <footer class="site-footer">
+        
+        
+        <div class="footer-reference" aria-label="Social references">
+          <p><a href="https://instagram.com/unsaalberk"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&amp;logoColor=white" alt="Instagram" /></a>
+<a href="https://github.com/Berk-Unsal"><img src="https://img.shields.io/badge/GitHub-100000?logo=github&amp;logoColor=white" alt="GitHub" /></a>
+<a href="https://linkedin.com/in/berkunsaltr"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&amp;logoColor=white" alt="LinkedIn" /></a></p>
+
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var storageKey = 'color-theme';
+        var root = document.documentElement;
+        var button = document.getElementById('theme-toggle');
+
+        function applyTheme(theme) {
+          root.setAttribute('data-theme', theme);
+          if (button) {
+            button.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            button.textContent = theme === 'dark' ? 'Light' : 'Dark';
+          }
+          localStorage.setItem(storageKey, theme);
+        }
+
+        var saved = localStorage.getItem(storageKey);
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var initial = saved || (prefersDark ? 'dark' : 'light');
+        applyTheme(initial);
+
+        if (button) {
+          button.addEventListener('click', function () {
+            var current = root.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
