@@ -5,8 +5,12 @@ title: Home
 
 <section aria-label="Posts">
   {% if site.posts.size > 0 %}
+    {% assign pinned_posts = site.posts | where_exp: "post", "post.pinned == true" %}
+    {% assign regular_posts = site.posts | where_exp: "post", "post.pinned != true" %}
+    {% assign ordered_posts = pinned_posts | concat: regular_posts %}
+
     <div class="post-list">
-      {% for post in site.posts %}
+      {% for post in ordered_posts %}
         <article class="post-card">
           {% assign word_count = post.content | strip_html | number_of_words %}
           {% assign read_time = word_count | plus: 179 | divided_by: 180 %}
@@ -28,8 +32,19 @@ title: Home
               <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
               <span aria-hidden="true"> · </span>
               <span class="post-read-time">{{ read_time }} minutes</span>
+              {% if post.pinned == true %}
+                <span aria-hidden="true"> · </span>
+                <span class="post-badge">Pinned</span>
+              {% endif %}
             </p>
             <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+            {% if post.tags and post.tags.size > 0 %}
+              <ul class="post-label-list" aria-label="Post labels">
+                {% for label in post.tags %}
+                  <li class="post-label">{{ label }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </div>
         </article>
       {% endfor %}

@@ -5,7 +5,20 @@ layout: default
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+    <p class="post-meta">
+      <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+      {% if page.pinned == true %}
+        <span aria-hidden="true"> · </span>
+        <span class="post-badge">Pinned</span>
+      {% endif %}
+    </p>
+    {% if page.tags and page.tags.size > 0 %}
+      <ul class="post-label-list" aria-label="Post labels">
+        {% for label in page.tags %}
+          <li class="post-label">{{ label }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   </header>
 
   {% if page.thumbnail_image %}
